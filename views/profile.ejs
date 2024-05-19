@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spaced Repetition Tracker</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spaced Repetition Tracker</title>
+</head>
+<body>
+    <h1>Your Knowledge Fields</h1>
+
+    <ul class="knowledgeFields">
+        
+        <% if (fields.length === 0) {%>
+        
+            <span class="empty">You have not added any knowledge fields!</span>
+        <% } %>
+        <% for(let i=0; i < fields.length; i++) {%>
+            <li class="field">
+            <span><%= fields[i].field %> (progress: <%= fields[i].progress %>)</span>
+        <% } %>
+        </li>
+    </ul>
+
+    <h2>Add a Field of Knowledge</h2>
+
+    <form action="/addKnowledgeField" method="POST">
+        <input type="text" placeholder="Add field of knowledge." name="knowledgeField">
+        <input type="submit" id="knowledgeField">
+    </form>
+</body>
+</html>
