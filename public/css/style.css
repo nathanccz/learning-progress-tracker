@@ -1,4 +1,4 @@
-
+/* PROFILE PAGE */
 
 .ezy__header30_amwY6uCW {
   /* Bootstrap variables */
@@ -10,8 +10,9 @@
   --ezy-form-bg: rgba(255, 255, 255, 0.65);
 
   color: var(--bs-body-color);
-  overflow: hidden;
+  overflow: visible;
   position: relative;
+  z-index: 2;
 }
 
 /* Gray Block Style */
@@ -120,21 +121,43 @@
   border-color: rgba(var(--ezy-theme-color-rgb), 0.9);
 }
 
-/* courses carousel */
-.ezy__header30_amwY6uCW-courses {
-  padding: 0 0 60px;
-  background-color: var(--bs-body-bg);
+/* suggestions autocomplete box */
+
+.suggestions-container {
+  padding: .5rem 1rem;
+  margin-top: 1rem;
+  border: 2px solid rgb(13, 110, 253);
+  background: rgb(13, 110, 253);
+  border-radius: 5px;
+  position: absolute;
+  top: 3rem;
+  z-index: 10;
+  width: 100%;
+  list-style: none;
+  text-align: left;
 }
 
-@media (min-width: 768px) {
-  .ezy__header30_amwY6uCW-courses {
-    padding: 0 0 100px;
-  }
+
+
+.suggestions-container li {
+  transition: background 0.25s;
+  border-radius: 2px;
+  height: 45px;
+  position: relative;
+  cursor: pointer;
+  text-align: left;
+  padding-left: .5rem;
 }
 
-.ezy__header30_amwY6uCW-courses .carousel {
-  margin-top: -100px !important;
-  z-index: 1;
+.suggestions-container li span {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%)
+}
+
+.suggestions-container li:hover {
+  background: rgb(231, 234, 236, .5);
 }
 
 /* card */
@@ -173,7 +196,8 @@
 }
 
 .ezy__header30_amwY6uCW-search-form .btn {
-  border-radius: 10px;
+  border-top-right-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
 }
 
 /* prev and next btn */
@@ -223,6 +247,7 @@
   overflow: hidden;
   padding: 60px 0;
   position: relative;
+  z-index: 1;
 }
 
 @media (min-width: 768px) {
@@ -375,30 +400,14 @@
   height: 65px;
 }
 
-/* discount */
-.ezy__portfolio12-discount {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  bottom: -25px;
-  right: 10px;
-  background-color: #fff;
-  padding: 15px;
-  border-radius: 50%;
-}
+/* img */
 
-.ezy__portfolio12-discount-price {
+/* .mt-4 .card .position-relative {
   text-align: center;
-  line-height: 1;
-  font-size: 20px;
-  color: var(--ezy-theme-color);
 }
-
-.ezy__portfolio12-discount-price span {
-  font-size: 16px;
-  color: #000;
-}
+.mt-4 .card img {
+  margin-top: 2rem;
+} */
 
 /* btn */
 .ezy__portfolio12 .btn-outline {
@@ -413,7 +422,7 @@
 }
 
 /* pagination */
-.ezy__portfolio12-pagination .page-link {
+/* .ezy__portfolio12-pagination .page-link {
   background-color: transparent;
   border: 1px solid var(--ezy-border-color);
   padding: 7px 13px;
@@ -441,7 +450,7 @@
     padding: 10px 18px;
     font-size: 18px;
   }
-}
+} */
 
 /* ICONS */
 
@@ -485,3 +494,7 @@
   .col-12.col-sm-6.col-lg-4.col-xl-3.mt-4 .close:active:before {
     background-color: rgba(68, 64, 64, 0.425);
   }
+
+
+
+  /* TECH OVERVIEW PAGE */

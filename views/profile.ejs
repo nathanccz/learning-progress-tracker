@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>profile_page</title>
+    <title>My Profile</title>
 
     <link rel="icon" href="./favicon.ico">
     <link rel="apple-touch-icon" href="./logo192.png">
@@ -47,136 +47,32 @@
               <p class="ezy__header30_amwY6uCW-sub-heading">
                 Search for technologies, add them to your stack, and start tracking your spaced repetition sessions.
               </p>
-              <form class="ezy__header30_amwY6uCW-search-form" action="">
+              <form class="ezy__header30_amwY6uCW-search-form" id="techInputForm" action="#">
                 <div class="input-group mt-4">
-                  <input class="form-control" type="search" placeholder="Search Technologies" aria-label="Search" />
-                  <button class="btn ezy__header30_amwY6uCW-btn" type="submit"><i class="fas fa-search"></i></button>
+                  <input class="form-control" name="techInput" id="techInput" type="text" placeholder="Add Technologies" aria-label="Search" autocomplete="off"/>
+                  <button class="btn ezy__header30_amwY6uCW-btn" id="addTech" type="submit" value="addTech"><i class="fas fa-add"></i></button>
+                  <ul id="suggestions" class="suggestions-container">
+                      <!-- <li><span>JavaScript</span></li>
+                      <li><span>JavaScript</span></li>
+                      <li><span>JavaScript</span></li>
+                      <li><span>JavaScript</span></li>
+                      <li><span>JavaScript</span></li>
+                      <li><span>JavaScript</span></li>
+                      <li><span>JavaScript</span></li>
+                      <li><span>JavaScript</span></li>
+                      <li><span>JavaScript</span></li> -->
+                   
+                  </ul>
                 </div>
               </form>
+              
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- courses carousel -->
-  <div class="ezy__header30_amwY6uCW-courses">
-    <div class="container">
-      <div class="row">
-        <div id="ezy__header30_amwY6uCW-controls" class="carousel slide mt-5" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="row">
-                <!-- card starts -->
-                <div class="col-12 col-md-4">
-                  <div class="card border-0 mt-4 mt-lg-0">
-                    <div class="card-head position-relative">
-                      <img class="card-img-top" src="https://cdn.easyfrontend.com/pictures/featured/featured_10_1.png"
-                        alt="" />
-                      <div class="ezy__header30_amwY6uCW-card-content">
-                        <h4>HTML</h4>
-                        <p>17 Courses</p>
-                        <button href="#" class="btn ezy__header30_amwY6uCW-btn mt-3">Add to List</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- card ends -->
-                <!-- card starts -->
-                <div class="col-12 col-md-4">
-                  <div class="card border-0 mt-4 mt-lg-0">
-                    <div class="card-head position-relative">
-                      <img class="card-img-top" src="https://cdn.easyfrontend.com/pictures/featured/featured_10_2.png"
-                        alt="" />
-                      <div class="ezy__header30_amwY6uCW-card-content">
-                        <h4>CSS</h4>
-                        <p>22 Courses</p>
-                        <button href="#" class="btn ezy__header30_amwY6uCW-btn mt-3">Add to List</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- card ends -->
-                <!-- card starts -->
-                <div class="col-12 col-md-4">
-                  <div class="card border-0 mt-4 mt-lg-0">
-                    <div class="card-head position-relative">
-                      <img class="card-img-top" src="https://cdn.easyfrontend.com/pictures/featured/featured_10_4.png"
-                        alt="" />
-                      <div class="ezy__header30_amwY6uCW-card-content">
-                        <h4>JavaScript</h4>
-                        <p>09 Courses</p>
-                        <button href="#" class="btn ezy__header30_amwY6uCW-btn mt-3">Add to List</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- card ends -->
-              </div>
-            </div>
-            <!-- carousel item -->
-            <div class="carousel-item">
-              <div class="row">
-                <!-- card starts -->
-                <div class="col-12 col-md-6 col-lg-4">
-                  <div class="card border-0 mt-4 mt-lg-0">
-                    <div class="card-head position-relative">
-                      <img class="card-img-top" src="https://cdn.easyfrontend.com/pictures/featured/featured_10_4.png"
-                        alt="" />
-                      <div class="ezy__header30_amwY6uCW-card-content">
-                        <h4>Git & GitHub</h4>
-                        <p>22 Courses</p>
-                        <button href="#" class="btn ezy__header30_amwY6uCW-btn mt-3">Add to List</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- card ends -->
-                <!-- card starts -->
-                <div class="col-12 col-md-6 col-lg-4">
-                  <div class="card border-0 mt-4 mt-lg-0">
-                    <div class="card-head position-relative">
-                      <img class="card-img-top" src="https://cdn.easyfrontend.com/pictures/featured/featured_10_3.png"
-                        alt="" />
-                      <div class="ezy__header30_amwY6uCW-card-content">
-                        <h4>Node.js</h4>
-                        <p>24 Courses</p>
-                        <button href="#" class="btn ezy__header30_amwY6uCW-btn mt-3">Add to List</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- card ends -->
-                <!-- card starts -->
-                <div class="col-12 col-md-6 col-lg-4">
-                  <div class="card border-0 mt-4 mt-lg-0">
-                    <div class="card-head position-relative">
-                      <img class="card-img-top" src="https://cdn.easyfrontend.com/pictures/featured/featured_10_1.png"
-                        alt="" />
-                      <div class="ezy__header30_amwY6uCW-card-content">
-                        <h4>React JS</h4>
-                        <p>11 Courses</p>
-                        <button href="#" class="btn ezy__header30_amwY6uCW-btn mt-3">Add to List</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- card ends -->
-              </div>
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#ezy__header30_amwY6uCW-controls"
-            data-bs-slide="prev">
-            <i class="fas fa-angle-left"></i>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#ezy__header30_amwY6uCW-controls"
-            data-bs-slide="next">
-            <i class="fas fa-angle-right"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
+  
 </section>
 
 <section class="ezy__portfolio12 gray">
@@ -210,22 +106,22 @@
           <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mt-4">
             <div class="card">
               <div class="position-relative">
-                <div class="ezy__portfolio12-play-btn"><i class="fas fa-play ms-1"></i></div>
                 <img
                   src="https://cdn.easyfrontend.com/pictures/courses/courses1.jpg"
                   class="card-img-top"
                   alt="..."
                 />
-              </div>
+                <!-- Add class="card-img-top" after src in case you need it-->
+              </div> 
               <div class="card-body">
                 <div class="close">
                     
                 </div>
                 <a>
-                  <p class="card-text mb-2">Front-end Technology</p>
+                  <p class="card-text mb-2"><%= fields[i].category %></p>
                 </a>
-                <a>
-                  <h5 class="card-title mb-2"><%= fields[i].field_name %></h5>
+                <a href="profile/<%= fields[i].techName %>" target="_blank">
+                  <h5 class="card-title mb-2"><%= fields[i].techName %></h5>
                 </a>
                 <p class="card-text">Some quick example text to build on the card the bulk content...</p>
                 <div class="d-flex justify-content-between mb-2">
@@ -242,7 +138,7 @@
                       <h4 class="mb-0">Progress: <%= fields[i].progress %> </h4>
                     </div>
                   </div>
-                  <a href="#" class="btn btn-outline ezy__portfolio12-card-btn" type="button">Track</a>
+                  <a href="profile/<%= fields[i].techName %>" target="_blank" class="btn btn-outline ezy__portfolio12-card-btn" type="button">Track</a>
                   
                 </div>
               </div>
