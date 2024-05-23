@@ -476,6 +476,57 @@
 
 /* PROFILE PAGE */
 
+.body-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.sidebar-container {
+  width: 14rem;
+  height: 100vh;
+  padding: 1rem 1rem 0 1rem;
+  position: sticky;
+  font-weight: 600;
+  background: rgb(252, 249, 249);
+  overflow: auto;
+}
+
+.sidebar-tech-links {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  position: relative;
+}
+
+.sidebar-tech-links li {
+  transition: background 0.25s;
+  border-radius: 5px;
+  height: 50px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  background: rgb(241, 239, 239);
+}
+
+.sidebar-tech-links span:first-child {
+  padding-left: .5rem;
+}
+
+.sidebar-tech-links li:hover {
+  background: rgba(199, 201, 202, 0.5);
+}
+
+.main {
+  flex-basis: 90%;
+  height: 100vh;
+  overflow: auto;
+}
+
 .ezy__header30_amwY6uCW {
   /* Bootstrap variables */
   --bs-body-bg: rgb(255, 255, 255);
@@ -975,3 +1026,15 @@
 
 
   /* TECH OVERVIEW PAGE */
+
+
+
+
+
+
+
+  /* GLOBAL */
+
+  a:link {
+    text-decoration: none;
+  }

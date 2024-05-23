@@ -20,7 +20,6 @@ async function addToList() {
             })
         })
         const data = await response.json()
-        console.log(data)
         if (data === 'Field already exists!') {
             alert(`You've already added this technology. Please choose another.`)
         } else {
@@ -43,7 +42,6 @@ async function deleteField() {
             })
         })
         const data = await response.json()
-        console.log(data)
         location.reload()
         
     } catch(err) {
@@ -62,7 +60,6 @@ techInput.oninput = async function() {
         suggestionsBox.style.pointerEvents = ''
         const suggestionsFetch = await fetch('/techlist')
         const suggestionsData = await suggestionsFetch.json()
-        console.log(suggestionsData)
         suggestions = suggestionsData
 
         suggestionsBox.style.visibility = 'visible'
