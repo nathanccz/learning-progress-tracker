@@ -58,7 +58,7 @@ techInput.oninput = async function() {
     const userInput = this.value
     suggestionsBox.innerHTML = ''
 
-    if (userInput.length === 1) {
+    if (userInput.length > 1) {
         suggestionsBox.style.pointerEvents = ''
         const suggestionsFetch = await fetch('/techlist')
         const suggestionsData = await suggestionsFetch.json()
@@ -80,13 +80,14 @@ suggestionsBox.onclick = function(event) {
 	suggestionsBox.style.visibility = 'hidden'
 }
 
-async function addTech() {
+async function addTech(event) {
+    event.preventDefault()
     let formData = new FormData(techInputForm)
     const userInput = Object.fromEntries(formData).techInput
     if (!userInput) return
 
     try {
-        const response = fetch("/addTech", {
+        const response = await fetch("/addTech", {
             method: "POST",
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({

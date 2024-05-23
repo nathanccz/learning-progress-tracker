@@ -20,7 +20,9 @@ app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html')
+})
 
 app.get('/profile', async (req, res) => {
     const knowledgeFields = await db.collection('users').find().toArray()
@@ -76,7 +78,7 @@ app.post('/addTech', async(req, res) => {
 
 app.delete('/deleteField', (req, res) => {
     console.log(req.body.fieldToDelete)
-    db.collection('knowledge_fields').deleteOne({field_name: req.body.fieldToDelete})
+    db.collection('users').deleteOne({techName: req.body.fieldToDelete})
     .then(result => {
         console.log('Field deleted')
         res.json('Field successfully deleted!')
