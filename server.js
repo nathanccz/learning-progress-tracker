@@ -61,14 +61,15 @@ app.post('/addKnowledgeField', async(req, res) => {
 app.post('/addTech', async(req, res) => {
     const findTech = await db.collection('tech_list').findOne({ techName: { $eq: req.body.techToAdd } })
     if (findTech) {
-        let {techName, techFullName, category, type} = findTech
+        let {techName, techFullName, category, type, faClass} = findTech
         
         try {
             const inserted = await db.collection('users').insertOne(
                 { techName: techName, 
                   techFullName: techFullName, 
                   category: category, 
-                  type: type }
+                  type: type,
+                  faClass: faClass }
             )
             res.json('Item added successfully!')
         } catch(err) {

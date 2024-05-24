@@ -483,7 +483,7 @@
 }
 
 .sidebar-container {
-  width: 14rem;
+  width: 16rem;
   height: 100vh;
   padding: 1rem 1rem 0 1rem;
   position: sticky;
@@ -663,6 +663,8 @@
   width: 100%;
   list-style: none;
   text-align: left;
+  max-height: 35vh;
+  overflow: auto;
 }
 
 
