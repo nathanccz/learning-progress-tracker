@@ -35,9 +35,11 @@ app.get('/techlist', async (req, res) => {
 })
 
 app.get('/profile/:tech', async (req, res) => {
+    const knowledgeFields = await db.collection('users').find().toArray()
     const techName = req.params.tech
     const subTopics = await db.collection('sub-topics').find().toArray()
-    res.render('tech-overview.ejs', { tech: techName, topics: subTopics })
+    
+    res.render('tech-overview.ejs', { fields: knowledgeFields, tech: techName, topics: subTopics })
 })
 
 
@@ -80,10 +82,8 @@ app.post('/addTech', async(req, res) => {
 })
 
 app.delete('/deleteField', (req, res) => {
-    console.log(req.body.fieldToDelete)
     db.collection('users').deleteOne({ techName: req.body.fieldToDelete })
     .then(result => {
-        console.log('Field deleted')
         res.json('Field successfully deleted!')
     })
     .catch(err => console.log(err))
