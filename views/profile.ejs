@@ -35,8 +35,38 @@
 
 <body>
     <!-- START: Body Content -->
+    <header>
+      <div class="ezy__nav4">
+        <nav class="navbar navbar-expand-lg  py-3">
+          <div class="container">
+            <a class="navbar-brand" href="#">
+              LOGO
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ezy_nav4-navbar-text"
+              aria-controls="ezy_nav4-navbar-text" aria-expanded="false" aria-label="Toggle navigation">
+              <span>
+                <span></span>
+              </span>
+            </button>
+            <div class="collapse navbar-collapse" id="ezy_nav4-navbar-text">
+              <ul class="navbar-nav mx-auto mb-2 mb-lg-0 mt-4 mt-lg-0">
+                <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">My Tech</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" href="#">How It Works</a></li> -->
+              </ul>
+              <ul class="navbar-nav flex-row mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <button class="btn btn-outline-light px-3">Log Out</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
   <div class="body-container">
-  <nav class="sidebar-container overflow-y-auto">
+  <nav class="sidebar-container">
     <ul class="sidebar-tech-links">
       <a href="/"><li><span><i class="fa-solid fa-house"></i></span><span>Home</span></li></a>
       <a href="/profile"><li><span><i class="fa-solid fa-user"></i></span><span>Profile</span></li></a>
@@ -47,42 +77,54 @@
       <% } %>
     </ul>
   </nav>
-  <main class="main overflow-y-auto">
-      <section class="ezy__header30_amwY6uCW">
-    <div class="ezy__header30_amwY6uCW-topbar"
-      style="background-image: url(images/profile-header-bg.jpg)">
-      <div class="ezy__header30_amwY6uCW-overlay"></div>
-      <div class="container">
-        <div class="row justify-content-center text-center">
-          <div class="col-12">
-            <h1 class="ezy__header30_amwY6uCW-heading mb-4">Track Your Web Development Journey</h1>
-            <div class="row justify-content-center">
-              <div class="col-12 col-lg-5 text-center">
-                <p class="ezy__header30_amwY6uCW-sub-heading">
-                  Search for technologies, add them to your stack, and start tracking your spaced repetition sessions.
-                </p>
-                <form class="ezy__header30_amwY6uCW-search-form" id="techInputForm" action="#">
-                  <div class="input-group mt-4">
-                    <input class="form-control" name="techInput" id="techInput" type="text" placeholder="Add Technologies" aria-label="Search" autocomplete="off"/>
-                    <button class="btn ezy__header30_amwY6uCW-btn" id="addTech" type="submit" value="addTech"><i class="fas fa-add"></i></button>
-                    <ul id="suggestions" class="suggestions-container">
-                    </ul>
-                  </div>
-                </form>
-                
-              </div>
+  <main class="main">
+    <section class="ezy__cta13 dark-gray" id="ezy__cta13">
+      <div class="profile-overview-container">
+        <div class="container">
+          <div class="row ezy__cta13-separator content-slider">
+            <!-- Start: Section Heading -->
+            <div class="text-center mb-4">
+              <h3 class="ezy__cta13-heading mb-3">My Profile</h3>
+              <p class="ezy__cta13-sub-heading mb-3">Search for technologies, add them to your stack, and track your spaced repetition sessions.</p>
             </div>
+            <!-- End: Section Heading -->
+            <!-- Register Form Goes Here  -->
+            <form id="ezy__cta13-register-form" method="post" class="ezy__cta13-single-form">
+              <div class="container-fluid">
+                <div class="row profile-form">
+                  <div class="col-12 col-lg-4">
+                    <input name="name" id="ezy__cta13-register-name" class="form-control" type="text" placeholder="Search technologies" autocomplete="off"
+                      required />
+                  </div>
+                  <div class="col-12 col-lg-4">
+                    <button class="btn ezy__cta13-btn mt-3 mt-lg-0">Add to Stack</button>
+                  </div>
+                </div>
+                <!-- End: .row -->
+              </div>
+              <!-- End: .container-fluid -->
+            </form>
+            <!-- End: #register-form -->
           </div>
+          <!-- End: .row -->
+        </div>
+        <!-- End:.container -->
+        <div class="progress-container">
+          <figure>
+            <svg width="200" height="200" viewBox="-25 -25 250 250" version="1.1" xmlns="http://www.w3.org/2000/svg" style="transform:rotate(-90deg)">
+              <circle r="90" cx="100" cy="100" fill="transparent" stroke="#e0e0e0" stroke-width="22" stroke-dasharray="565.48px" stroke-dashoffset="0"></circle>
+              <circle r="90" cx="100" cy="100" stroke="#76e5b1" stroke-width="16px" stroke-linecap="round" stroke-dashoffset="107px" fill="transparent" stroke-dasharray="565.48px"></circle>
+              <text x="46px" y="119px" fill="#6bdba7" font-size="59px" font-weight="bold" style="transform:rotate(90deg) translate(0px, -196px)">81%</text>
+            </svg>
+          </figure>
         </div>
       </div>
-    </div>
-    
-  </section>
+    </section>
 
   <section class="ezy__portfolio12 gray">
     <div class="container">
       <div class="row justify-content-center">
-        <h1 class="ezy__portfolio12-heading text-center">My Technology Stack</h1>
+        <h2 class="text-center">My Technology Stack</h2>
 
         <!-- tab bar -->
         <!-- <div class="col-12">

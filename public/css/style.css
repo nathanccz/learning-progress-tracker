@@ -476,6 +476,139 @@
 
 /* PROFILE PAGE */
 
+/* header */
+
+.ezy__nav4 {
+	/* Bootstrap variables */
+	--bs-body-color: #000;
+	--bs-body-bg: rgb(255, 255, 255);
+
+	/* Easy Frontend variables */
+	--ezy-theme-color: rgb(13, 110, 253);
+	--ezy-theme-color-rgb: 13, 110, 253;
+
+	background-color: var(--bs-body-bg);
+}
+
+/* Gray Block Style */
+.gray .ezy__nav4,
+.ezy__nav4.gray {
+	/* Bootstrap variables */
+	--bs-body-bg: rgb(246, 246, 246);
+}
+
+/* Dark Gray Block Style */
+.dark-gray .ezy__nav4,
+.ezy__nav4.dark-gray {
+	/* Bootstrap variables */
+	--bs-body-color: #ffffff;
+	--bs-body-bg: rgb(30, 39, 53);
+}
+
+
+/* Dark Block Style */
+.dark .ezy__nav4,
+.ezy__nav4.dark {
+	/* Bootstrap variables */
+	--bs-body-color: #ffffff;
+	--bs-body-bg: rgb(11, 23, 39);
+}
+
+.ezy__nav4 .navbar-brand {
+	font-weight: 800;
+	font-size: 30px;
+	color: var(--bs-body-color);
+}
+
+.ezy__nav4 .navbar-toggler {
+	border: none;
+	box-shadow: none !important;
+}
+
+.ezy__nav4 .navbar-toggler>span {
+	display: flex;
+	align-items: center;
+	height: 32px;
+}
+
+.ezy__nav4 .navbar-toggler>span>span {
+	position: relative;
+}
+
+.ezy__nav4 .navbar-toggler>span>span,
+.ezy__nav4 .navbar-toggler>span>span::before,
+.ezy__nav4 .navbar-toggler>span>span::after {
+	height: 2px;
+	background-color: var(--bs-body-color);
+	width: 25px;
+	display: inline-block;
+	border-radius: 5px;
+	transition: all .35s ease-in-out;
+}
+
+.ezy__nav4 .navbar-toggler>span>span::before,
+.ezy__nav4 .navbar-toggler>span>span::after {
+	content: '';
+	position: absolute;
+	left: 0;
+}
+
+.ezy__nav4 .navbar-toggler[aria-expanded="false"]>span>span::before {
+	top: 7px;
+}
+
+.ezy__nav4 .navbar-toggler[aria-expanded="false"]>span>span::after {
+	bottom: 7px;
+}
+
+.ezy__nav4 .navbar-toggler[aria-expanded="true"]>span>span {
+	background-color: transparent;
+}
+
+.ezy__nav4 .navbar-toggler[aria-expanded="true"]>span>span::before {
+	top: 0;
+	transform: rotate(-45deg);
+}
+
+.ezy__nav4 .navbar-toggler[aria-expanded="true"]>span>span::after {
+	bottom: 0;
+	transform: rotate(45deg);
+}
+
+.ezy__nav4 .navbar-nav .nav-link {
+	color: var(--bs-body-color);
+	opacity: .6;
+}
+
+.ezy__nav4 .navbar-nav .nav-link:hover,
+.ezy__nav4 .navbar-nav .nav-link:focus,
+.ezy__nav4 .navbar-nav .nav-link.active {
+	color: var(--bs-body-color);
+	opacity: 1;
+}
+
+@media (min-width: 992px) {
+	.ezy__nav4 .navbar-nav .nav-link {
+		padding-right: 16px;
+		padding-left: 16px;
+	}
+}
+
+.ezy__nav4 .btn {
+	border-radius: 10px;
+}
+.ezy__nav4 .btn-outline-light {
+	border-color: var(--bs-body-color);
+	color: var(--bs-body-color);
+}
+.ezy__nav4 .btn-outline-light:hover {
+	background-color: var(--bs-body-color);
+	color: var(--bs-body-bg);
+}
+
+
+/* body */
+
 .body-container {
   display: flex;
   position: relative;
@@ -484,7 +617,7 @@
 
 .sidebar-container {
   width: 16rem;
-  height: 100vh;
+  height: 92vh;
   padding: 1rem 1rem 0 1rem;
   position: sticky;
   font-weight: 600;
@@ -523,126 +656,159 @@
 
 .main {
   flex-basis: 90%;
-  height: 100vh;
+  height: 92vh;
   overflow: auto;
 }
 
-.ezy__header30_amwY6uCW {
-  /* Bootstrap variables */
-  --bs-body-bg: rgb(255, 255, 255);
+/* profile CTA */
+
+.profile-overview-container {
+  display: flex;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.ezy__cta13 {
+  --bs-body-color: rgb(50, 62, 80);
+  --bs-body-bg: #fff;
 
   /* Easy Frontend variables */
   --ezy-theme-color: rgb(13, 110, 253);
   --ezy-theme-color-rgb: 13, 110, 253;
-  --ezy-form-bg: rgba(255, 255, 255, 0.65);
+  --ezy-btn-color: #ffffff;
+  --ezy-btn-bg: #00bfa5;
+  --ezy-form-input-border: rgba(55, 55, 55, 0.45);
+  --ezy-form-input-border-focus: #00bfa5;
+  --ezy-form-input-color: rgba(55, 55, 55, 0.9);
+  --ezy-form-box-shadow: 0 0 0 0 #fff;
 
-  color: var(--bs-body-color);
-  overflow: visible;
-  position: relative;
-  z-index: 2;
+  background-color: var(--bs-body-bg);
+  border-bottom: 2px solid rgb(172, 170, 170, .5);
+  display: flex;
+}
+
+.cta-container {
+  text-align: left;
+}
+
+.profile-form {
+  justify-content: center !important;
+  gap: .5rem;
+}
+
+#ezy__cta13-register-name {
+  color: white;
+}
+
+.progress-container {
+  flex-basis: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Gray Block Style */
-.gray .ezy__header30_amwY6uCW,
-.ezy__header30_amwY6uCW.gray {
+.gray .ezy__cta13,
+.ezy__cta13.gray {
   /* Bootstrap variables */
   --bs-body-bg: rgb(246, 246, 246);
-
-  --ezy-form-bg: rgba(246, 246, 246, 0.65);
 }
 
 /* Dark Gray Block Style */
-.dark-gray .ezy__header30_amwY6uCW,
-.ezy__header30_amwY6uCW.dark-gray {
+.dark-gray .ezy__cta13,
+.ezy__cta13.dark-gray {
   /* Bootstrap variables */
   --bs-body-color: #ffffff;
   --bs-body-bg: rgb(30, 39, 53);
 
-  --ezy-form-bg: rgba(30, 39, 53, 0.65);
+  /* Easy Frontend variables */
+  --ezy-form-input-border: rgba(255, 255, 255, 0.2);
 }
 
 /* Dark Block Style */
-.dark .ezy__header30_amwY6uCW,
-.ezy__header30_amwY6uCW.dark {
+.dark .ezy__cta13,
+.ezy__cta13.dark {
   /* Bootstrap variables */
   --bs-body-color: #ffffff;
   --bs-body-bg: rgb(11, 23, 39);
 
-  --ezy-form-bg: rgba(11, 23, 39, 0.65);
+  /* Easy Frontend variables */
+  --ezy-form-input-border: rgba(255, 255, 255, 0.2);
 }
 
-.ezy__header30_amwY6uCW-heading {
-  font-weight: bold;
-  font-size: 32px;
-  line-height: 1.2;
-}
-
-@media (min-width: 768px) {
-  .ezy__header30_amwY6uCW-heading {
-    font-size: 60px;
-  }
-}
-
-.ezy__header30_amwY6uCW-sub-heading {
-  font-size: 20px;
-  line-height: 1.3;
-  opacity: 0.8;
-}
-
-/* topbar */
-.ezy__header30_amwY6uCW-topbar {
-  background-color: var(--bs-body-bg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 150px 0;
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  color: #ffffff;
-}
-
-@media (min-width: 768px) {
-  .ezy__header30_amwY6uCW-topbar {
-    padding: 220px 0;
-  }
-}
-
-/* overlay */
-.ezy__header30_amwY6uCW-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: -1;
-}
-
-/* form */
-.ezy__header30_amwY6uCW .form-control {
-  min-height: 48px;
-  line-height: 40px;
-  border-color: transparent;
-  background: var(--ezy-form-bg);
-  border-radius: 10px;
+.ezy__cta13-heading {
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 25px;
   color: var(--bs-body-color);
 }
 
-.ezy__header30_amwY6uCW .form-control:focus {
-  border-color: var(--ezy-theme-color);
+@media (min-width: 768px) {
+  .ezy__cta13-heading {
+    font-size: 45px;
+    line-height: 45px;
+  }
+}
+
+.ezy__cta13-sub-heading {
+  font-size: 18px;
+  color: var(--bs-body-color);
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+.ezy__cta13-separator {
+  padding: 100px 0;
+}
+
+.ezy__cta13-single-form input[type="text"],
+.ezy__cta13-single-form input[type="email"] {
+  padding: 0 20px;
+}
+
+.ezy__cta13 .form-control,
+.ezy__cta13 .form-select {
+  height: 50px;
+  line-height: 40px;
+  border: 1px solid var(--ezy-form-input-border);
+  background-color: transparent;
+  color: var(--ezy-form-input-color);
+  transition: all 0.4s ease-in-out;
+}
+
+.ezy__cta13 .form-control::-webkit-input-placeholder {
+  color: var(--bs-body-color);
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 300;
+}
+
+.ezy__cta13 .form-control::-moz-input-placeholder {
+  color: var(--bs-body-color);
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 300;
+}
+
+.ezy__cta13 .form-control::-ms-input-placeholder {
+  color: var(--bs-body-color);
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 300;
+}
+
+.ezy__cta13 .form-control:focus {
+  border-color: var(--ezy-form-input-border-focus);
   box-shadow: none;
 }
 
-.ezy__header30_amwY6uCW-btn {
-  padding: 12px 30px;
-  color: #fff;
-  background-color: var(--ezy-theme-color);
-  border-color: var(--ezy-theme-color);
-}
-
-.ezy__header30_amwY6uCW-btn:hover {
+.ezy__cta13-btn {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 11px 50px;
+  width: 100%;
+  height: 50px;
   color: #fff;
   background-color: rgba(var(--ezy-theme-color-rgb), 0.9);
   border-color: rgba(var(--ezy-theme-color-rgb), 0.9);
@@ -775,7 +941,7 @@
   background-color: var(--bs-body-bg);
   color: var(--bs-body-color);
   overflow: hidden;
-  padding: 60px 0;
+  padding: 50px 0 !important;
   position: relative;
   z-index: 1;
 }
@@ -1040,3 +1206,5 @@
   a:link {
     text-decoration: none;
   }
+
+  
