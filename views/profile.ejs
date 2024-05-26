@@ -89,17 +89,19 @@
             </div>
             <!-- End: Section Heading -->
             <!-- Register Form Goes Here  -->
-            <form id="ezy__cta13-register-form" method="post" class="ezy__cta13-single-form">
+            <form id="techInputForm" class="ezy__cta13-single-form" action="#">
               <div class="container-fluid">
                 <div class="row profile-form">
                   <div class="col-12 col-lg-4">
-                    <input name="name" id="ezy__cta13-register-name" class="form-control" type="text" placeholder="Search technologies" autocomplete="off"
-                      required />
+                    <input name="techInput" id="techInput" class="form-control" type="text" placeholder="Search technologies" autocomplete="off" />
                   </div>
                   <div class="col-12 col-lg-4">
-                    <button class="btn ezy__cta13-btn mt-3 mt-lg-0">Add to Stack</button>
+                    <button class="btn ezy__cta13-btn mt-3 mt-lg-0" type="submit" id="addTech" value="addTech">Add Tech</button>
                   </div>
                 </div>
+                <ul id="suggestions" class="suggestions-container">
+              
+                </ul>
                 <!-- End: .row -->
               </div>
               <!-- End: .container-fluid -->
@@ -123,6 +125,7 @@
 
   <section class="ezy__portfolio12 gray">
     <div class="container">
+      <button class="edit-btn" id="edit-btn"> Edit</button>
       <div class="row justify-content-center">
         <h2 class="text-center">My Technology Stack</h2>
 
@@ -140,7 +143,6 @@
             </li>
           </ul>
         </div> -->
-
         <!-- tab contents -->
         <div class="col-12">
           <div class="row">
@@ -160,7 +162,7 @@
                   <!-- Add class="card-img-top" after src in case you need it-->
                 </div> 
                 <div class="card-body">
-                  <div class="close">
+                  <div class="close hidden">
                       
                   </div>
                   <a>
@@ -184,7 +186,7 @@
                         <h4 class="mb-0">Progress: <%= fields[i].progress %> </h4>
                       </div>
                     </div>
-                    <a href="profile/<%= fields[i].techName %>" target="_blank" class="btn btn-outline ezy__portfolio12-card-btn" type="button">Track</a>
+                    <a href="profile/<%= fields[i].techName %>" class="btn btn-outline ezy__portfolio12-card-btn" type="button">Track</a>
                     
                   </div>
                 </div>

@@ -806,7 +806,7 @@
   font-size: 16px;
   text-transform: uppercase;
   font-weight: 600;
-  padding: 11px 50px;
+  padding: 11px 20px;
   width: 100%;
   height: 50px;
   color: #fff;
@@ -815,6 +815,11 @@
 }
 
 /* suggestions autocomplete box */
+
+.container-fluid {
+  position: relative;
+  width: 80%;
+}
 
 .suggestions-container {
   visibility: hidden;
@@ -826,7 +831,7 @@
   position: absolute;
   top: 3rem;
   z-index: 10;
-  width: 100%;
+  width: 95%;
   list-style: none;
   text-align: left;
   max-height: 35vh;
@@ -849,7 +854,8 @@
   margin: 0;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%)
+  transform: translateY(-50%);
+  color: #ffffff;
 }
 
 .suggestions-container li:hover {
@@ -997,6 +1003,14 @@
   .ezy__portfolio12-heading {
     font-size: 45px;
   }
+}
+
+button.edit-btn {
+  float: right;
+  width: 4rem;
+  border-radius: 5px;
+  border-color: rgba(55, 55, 55, 0.45);
+  background: transparent;
 }
 
 /* nav */
@@ -1151,7 +1165,6 @@
 /* ICONS */
 
 .col-12.col-sm-6.col-lg-4.col-xl-3.mt-4 .close {
-  display: block;
   position: absolute;
   top: 0;
   right: 0;
@@ -1196,7 +1209,120 @@
   /* TECH OVERVIEW PAGE */
 
 
+  /* sub-topic list */
 
+  .ezy__faq12 {
+    /* Bootstrap variables */
+    --bs-body-color: #28303b;
+    --bs-body-bg: rgb(255, 255, 255);
+  
+    /* Easy Frontend variables */
+    --ezy-theme-color: rgb(13, 110, 253);
+    --ezy-theme-color-rgb: 13, 110, 253;
+    --ezy-item-bg: #ffffff;
+    --ezy-item-shadow: 0px 4px 44px rgba(159, 190, 218, 0.37);
+  
+    background-color: var(--bs-body-bg);
+    overflow: hidden;
+    padding: 60px 0;
+  }
+  
+  @media (min-width: 768px) {
+    .ezy__faq12 {
+      padding: 100px 0;
+    }
+  }
+  
+  /* Gray Block Style */
+  .gray .ezy__faq12,
+  .ezy__faq12.gray {
+    /* Bootstrap variables */
+    --bs-body-bg: rgb(246, 246, 246);
+  }
+  
+  /* Dark Gray Block Style */
+  .dark-gray .ezy__faq12,
+  .ezy__faq12.dark-gray {
+    /* Bootstrap variables */
+    --bs-body-color: #ffffff;
+    --bs-body-bg: rgb(30, 39, 53);
+  
+    /* Easy Frontend variables */
+    --ezy-item-bg: rgb(11, 23, 39);
+    --ezy-item-shadow: 0px 4px 22px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Dark Block Style */
+  .dark .ezy__faq12,
+  .ezy__faq12.dark {
+    /* Bootstrap variables */
+    --bs-body-color: #ffffff;
+    --bs-body-bg: rgb(11, 23, 39);
+  
+    /* Easy Frontend variables */
+    --ezy-item-bg: rgb(30, 39, 53);
+    --ezy-item-shadow: 0px 4px 22px rgba(0, 0, 0, 0.2);
+  }
+  
+  .ezy__faq12-heading {
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 25px;
+    color: var(--bs-body-color);
+  }
+  
+  @media (min-width: 768px) {
+    .ezy__faq12-heading {
+      font-size: 45px;
+      line-height: 45px;
+    }
+  }
+  
+  .ezy__faq12-sub-heading {
+    font-size: 18px;
+    line-height: 30px;
+    color: var(--bs-body-color);
+    opacity: 0.7;
+  }
+  
+  .ezy__faq12-list {
+    background-color: var(--ezy-item-bg);
+    box-shadow: var(--ezy-item-shadow);
+    margin: 0;
+  }
+  
+  .ezy__faq12-item * {
+    color: var(--bs-body-color);
+  }
+  
+  .ezy__faq12-btn-collapse [class*="fa-"] {
+    transition: transform 0.25s ease-in-out;
+  }
+  
+  .ezy__faq12-btn-collapse:focus {
+    box-shadow: none;
+  }
+  
+  .ezy__faq12-btn-collapse.active [class*="fa-"],
+  .ezy__faq12-btn-collapse[aria-expanded="true"] [class*="fa-"] {
+    transform: rotate(-180deg);
+  }
+  
+  .ezy__faq12 .border-warning {
+    border-color: var(--ezy-theme-color) !important;
+  }
+  
+  .ezy__faq12 .btn-outline-primary {
+    padding: 11px 35px;
+    border-color: var(--ezy-theme-color);
+    color: var(--ezy-theme-color);
+  }
+  
+  .ezy__faq12 .btn-outline-primary:hover {
+    color: #fff;
+    border-color: var(--ezy-theme-color);
+    background-color: var(--ezy-theme-color);
+  }
 
 
 
@@ -1205,6 +1331,14 @@
 
   a:link {
     text-decoration: none;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  input {
+    color: #ffffff;
   }
 
   

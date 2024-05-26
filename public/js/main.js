@@ -4,8 +4,16 @@ Array.from(document.querySelectorAll('.close')).forEach(entry => entry.addEventL
 const addTechButton = document.getElementById('addTech')
 const techInputForm = document.getElementById('techInputForm')
 const suggestionsBox = document.getElementById('suggestions')
+const techInputField = document.getElementById('techInput')
+const editButton = document.getElementById('edit-btn')
+
+let suggestions
 
 addTechButton.addEventListener('click', addTech)
+editButton.addEventListener('click', () => {
+    console.log('test')
+    Array.from(document.querySelectorAll('.close')).forEach(el => el.classList.toggle('hidden') )
+})
 
 async function addToList() {
     const itemText = this.parentNode.childNodes[1].innerText
@@ -49,9 +57,6 @@ async function deleteField() {
     }
 }
 
-let suggestions
-const techInputField = document.getElementById('techInput')
-
 techInput.oninput = async function() {
     const userInput = this.value
     suggestionsBox.innerHTML = ''
@@ -72,6 +77,7 @@ techInput.oninput = async function() {
 
 suggestionsBox.onclick = function(event) {
 	const setValue = event.target.innerText
+    console.log(setValue)
 	techInputField.value = setValue
 	this.innerHTML = ""
 	suggestionsBox.style.visibility = 'hidden'
