@@ -36,6 +36,7 @@ app.get('/techlist', async (req, res) => {
 })
 
 app.get('/profile/:tech', async (req, res) => {
+    const knowledgeFields = await db.collection('users').find().toArray()
     const techName = req.params.tech
     const techQuery = techName.split(' ').join('+')
     console.log(techQuery)
@@ -44,13 +45,14 @@ app.get('/profile/:tech', async (req, res) => {
     // const techParam = req.params.tech
     // try {
     //     const userTech = await db.collection('users').find().toArray()
+    
     //     const result = await db.collection('users').findOne({techName: techParam})
     //     // const result = userTech.filter(field => field.techName === techParam)
         
         
     //  const renderObj = { fields: userTech, tech: techParam, techObj: result }
     
-        res.render('tech-overview.ejs', { fields: userTech, tech: techName, techObj: result, query: techQuery }) 
+        res.render('tech-overview.ejs', { fields: knowledgeFields, fields: userTech, tech: techName, techObj: result, query: techQuery }) 
     // } catch(err) {
     //     console.log("error: " + err)
     // }
