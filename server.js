@@ -1,4 +1,5 @@
 const express = require('express')
+const moment = require('moment')
 const app = express()
 const MongoClient = require('mongodb').MongoClient
 const PORT = 4000
@@ -21,6 +22,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 app.get('/', (req, res) => {
+    console.log(moment().format('MMMM Do YYYY'))
     res.sendFile(__dirname + '/index.html')
 })
 
@@ -36,7 +38,7 @@ app.get('/techlist', async (req, res) => {
 })
 
 app.get('/profile/:tech', async (req, res) => {
-    const knowledgeFields = await db.collection('users').find().toArray()
+    const techStack = await db.collection('users').find().toArray()
     const techName = req.params.tech
     const techQuery = techName.split(' ').join('+')
     console.log(techQuery)
@@ -52,7 +54,7 @@ app.get('/profile/:tech', async (req, res) => {
         
     //  const renderObj = { fields: userTech, tech: techParam, techObj: result }
     
-        res.render('tech-overview.ejs', { fields: knowledgeFields, fields: userTech, tech: techName, techObj: result, query: techQuery }) 
+        res.render('tech-overview.ejs', { fields: techStack, fields: userTech, tech: techName, techObj: result, query: techQuery }) 
     // } catch(err) {
     //     console.log("error: " + err)
     // }
@@ -86,7 +88,8 @@ app.post('/addTech', async(req, res) => {
         
         try {
             const inserted = await db.collection('users').insertOne(
-                { techName: techName,
+                { 
+                  techName: techName,
                   category: category, 
                   type: type,
                   faClass: faClass
@@ -101,14 +104,15 @@ app.post('/addTech', async(req, res) => {
 })
 
 app.post('/addTopic', async (req, res) => {
-    const topic = req.body
+    const topic = req.body.topic
+    console.log(topic)
     const tech = req.query.tech.split('+').join(' ')
-    console.log(tech)
+   
     
     try {
        const result = await db.collection('users').findOneAndUpdate(
             { techName: tech },
-            { $push: topic },
+            { $push: {topics: {topic, history: []}} },
        )
        console.log(result)
        res.redirect(`/profile/${tech}`)
