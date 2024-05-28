@@ -1,5 +1,6 @@
 // Array.from(document.querySelectorAll('.mt-3')).forEach(entry => entry.addEventListener('click', addToList))
 Array.from(document.querySelectorAll('.close')).forEach(entry => entry.addEventListener('click', deleteField))
+Array.from(document.querySelectorAll('.session-submit-btn')).forEach(btn => btn.addEventListener('click', saveSession))
 
 const addTechButton = document.getElementById('addTech')
 const techInputForm = document.getElementById('techInputForm')
@@ -105,5 +106,35 @@ async function addTech(event) {
     }
 }
 
+async function saveSession(event) {
+    const selectorId = event.target.id
+    const tech = event.target.classList[1]
+    const topic = event.target.classList[2]
+    console.log(tech, topic)
+    const selectElement = document.getElementById(`rating-select${selectorId}`)
+    const output = selectElement.options[selectElement.selectedIndex].value
+    if (!output) {
+        alert('Please choose an option from the list.')
+        return
+    } 
+    
+    try {
+        const response = await fetch("/saveSession", {
+            method: "POST",
+            headers: {'Content-type': 'application/json'},
+            body: JSON.stringify({
+                'rating': output,
+                'tech': tech,
+                'topic': topic
+            })
+        })
+        const data = await response.json()
+        console.log(data)
+        location.reload()
 
+    } catch(err) {
+        console.log('Error ' + err)
+    }
+    
+}
 

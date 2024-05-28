@@ -163,15 +163,15 @@
                   <div class="session-tracker-container" id="session-tracker">
                     <label for="rating-select">Log today's session:</label>
 
-                    <select name="rating" id="rating-select">
+                    <select name="rating" id="rating-select1">
                       <option value="">--Choose your rating--</option>
-                      <option value="hard">Hard</option>
-                      <option value="somewhat-hard">Somewhat Hard</option>
-                      <option value="average">Average</option>
-                      <option value="easy">Easy</option>
-                      <option value="very-easy">Very Easy</option>
+                      <option value="Hard">Hard</option>
+                      <option value="Somewhat Hard">Somewhat Hard</option>
+                      <option value="Average">Average</option>
+                      <option value="Easy">Easy</option>
+                      <option value="Very Easy">Very Easy</option>
                     </select>
-                    <button>Submit</button>
+                    <button class="session-submit-btn <%= tech %> <%= techObj[0].topics[0].topic %>" id="1">Submit</button>
                   </div>
                   <p class="opacity-50 mb-0">
                     You have not logged any sessions for this topic.
@@ -197,15 +197,15 @@
                   <div class="session-tracker-container" id="session-tracker">
                     <label for="rating-select">Log today's session:</label>
                     
-                    <select name="rating" id="rating-select">
+                    <select name="rating" id="rating-select<%= i + 1 %>">
                       <option value="">--Choose your rating--</option>
-                      <option value="hard">Hard</option>
-                      <option value="somewhat-hard">Somewhat Hard</option>
-                      <option value="average">Average</option>
-                      <option value="easy">Easy</option>
-                      <option value="very-easy">Very Easy</option>
+                      <option value="Hard">Hard</option>
+                      <option value="Somewhat Hard">Somewhat Hard</option>
+                      <option value="Average">Average</option>
+                      <option value="Easy">Easy</option>
+                      <option value="Very Easy">Very Easy</option>
                     </select>
-                    <button>Submit</button>
+                    <button class="session-submit-btn <%= tech %> <%= techObj[0].topics[i].topic %>" id="<%= i + 1 %>">Submit</button>
                   </div>
                   <p class="opacity-50 mb-0">
                     You have not logged any sessions for this topic.

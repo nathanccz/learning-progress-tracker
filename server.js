@@ -22,7 +22,6 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 app.get('/', (req, res) => {
-    console.log(moment().format('MMMM Do YYYY'))
     res.sendFile(__dirname + '/index.html')
 })
 
@@ -120,6 +119,18 @@ app.post('/addTopic', async (req, res) => {
         console.log(err)
     }
     
+})
+
+app.post('/saveSession', async(req, res) => {
+    const rating = req.body.rating
+    const tech = req.body.tech
+    const topic = req.body.topic
+    const today = moment().format('MMMM Do YYYY')
+
+    db.collection('users').updateOne(
+        { "topics": { $elemMatch: { "topic": topic } } },
+        { $push: { "topics.$.history": { date: today, rating: rating } } }
+      )
 })
 
 app.delete('/deleteField', (req, res) => {
