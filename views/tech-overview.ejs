@@ -146,24 +146,25 @@
             <% if (!techObj[0].topics) { %>
               <span>You have not added any topics!</span>
             <% } else { %>  
+            <% for (let i = 0; i < techObj[0].topics.length; i++) { %>
             <div class="ezy__faq10-item">
               <a
                 class="btn p-3 p-lg-4 w-100 text-start d-flex justify-content-between align-items-center ezy__faq10-btn-collapse"
                 data-bs-toggle="collapse"
-                href="#ezy-faq10-collapse-1"
+                href="#ezy-faq10-collapse-<%= i + 1 %>"
                 role="button"
                 aria-expanded="true"
-                aria-controls="ezy-faq10-collapse-1"
+                aria-controls="ezy-faq10-collapse-<%= i + 1 %>"
               >
-                <span class="main-topic"><%= techObj[0].topics[0].topic %></span>
+                <span class="main-topic"><%= techObj[0].topics[i].topic %></span>
                 <span class="fas fa-chevron-down"></span>
               </a>
-              <div class="collapse show" id="ezy-faq10-collapse-1">
+              <div class="collapse show" id="ezy-faq10-collapse-<%= i + 1 %>">
                 <div class="ezy__faq10-content p-3 p-lg-4">
-                  <div class="session-tracker-container" id="session-tracker">
-                    <label for="rating-select">Log today's session:</label>
+                  <div class="session-tracker-container" id="session-tracker<%= i + 1 %>">
+                    <label for="rating-select"><strong>Log today's session:</strong></label>
 
-                    <select name="rating" id="rating-select1">
+                    <select name="rating" id="rating-select<%= i + 1 %>">
                       <option value="">--Choose your rating--</option>
                       <option value="Hard">Hard</option>
                       <option value="Somewhat Hard">Somewhat Hard</option>
@@ -171,20 +172,20 @@
                       <option value="Easy">Easy</option>
                       <option value="Very Easy">Very Easy</option>
                     </select>
-                    <button class="session-submit-btn <%= tech %> <%= techObj[0].topics[0].topic %>" id="1">Submit</button>
+                    <button class="session-submit-btn <%= tech %> <%= techObj[0].topics[i].topic.split(' ').join('-') %>" id="<%= i + 1 %>">Submit</button>
                   </div>
-                  <% if (techObj[0].topics[0].history.length === 0) { %>
+                  <% if (techObj[0].topics[i].history.length === 0) { %>
                   <p class="opacity-50 mb-0">
                     You have not logged any sessions for this topic.
                   </p>
                   <% } else { %>
                     <div class="history-container">
-                    <h5>History</h5> 
-                    <% for (let i = 0; i < techObj[0].topics[0].history.length; i++) { %>
-                      <% let rating = techObj[0].topics[0].history[i].rating %>
+                    <h6>Latest Session</h6> 
+                    <% for (let j = techObj[0].topics[i].history.length - 1; j >= 0; j--) { %>
+                      <% let rating = techObj[0].topics[i].history[j].rating %>
                       <% let circleIconClass = rating.split(' ').join('-') %>
-                      <% let date = techObj[0].topics[0].history[i].date %>
-                      <% let time = techObj[0].topics[0].history[i].time %>
+                      <% let date = techObj[0].topics[i].history[j].date %>
+                      <% let time = techObj[0].topics[i].history[j].time %>
                       <div class="history-item">
                         <span><strong>Date:</strong> <%= date %> </span>
                         <span><strong>Time:</strong> <%= time %> </span>
@@ -197,44 +198,8 @@
               </div>
               
             </div>
-            <% for (let i = 1; i < techObj[0].topics.length; i++) { %>
-            <div class="ezy__faq10-item">
-              <a
-                class="btn p-3 p-lg-4 w-100 text-start d-flex justify-content-between align-items-center ezy__faq10-btn-collapse"
-                data-bs-toggle="collapse"
-                href="#ezy-faq10-collapse-<%= i + 1 %>"
-                role="button"
-                aria-expanded="false"
-                aria-controls="ezy-faq10-collapse-<%= i + 1 %>"
-              >
-                <span class="main-topic"><%= techObj[0].topics[i].topic %></span>
-                <span class="fas fa-chevron-down"></span>
-              </a>
-              <div class="collapse" id="ezy-faq10-collapse-<%= i + 1 %>">
-                <div class="ezy__faq10-content p-3 p-lg-4">
-                  <div class="session-tracker-container" id="session-tracker">
-                    <label for="rating-select">Log today's session:</label>
-                    
-                    <select name="rating" id="rating-select<%= i + 1 %>">
-                      <option value="">--Choose your rating--</option>
-                      <option value="Hard">Hard</option>
-                      <option value="Somewhat Hard">Somewhat Hard</option>
-                      <option value="Average">Average</option>
-                      <option value="Easy">Easy</option>
-                      <option value="Very Easy">Very Easy</option>
-                    </select>
-                    <button class="session-submit-btn <%= tech %> <%= techObj[0].topics[i].topic %>" id="<%= i + 1 %>">Submit</button>
-                  </div>
-                  <% if (techObj[0].topics[i].history.length === 0) { %>
-                    <p class="opacity-50 mb-0">
-                      You have not logged any sessions for this topic.
-                    </p>
-                  <% } %>
-                </div>
-              </div>
-            </div>
-              <% } %>
             <% } %>
+           <% } %>
             </div>
           </div>
         </div>

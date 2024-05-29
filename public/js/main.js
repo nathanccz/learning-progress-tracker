@@ -12,13 +12,11 @@ let suggestions
 
 addTechButton.addEventListener('click', addTech)
 editButton.addEventListener('click', () => {
-    console.log('test')
     Array.from(document.querySelectorAll('.close')).forEach(el => el.classList.toggle('hidden') )
 })
 
 async function addToList() {
     const itemText = this.parentNode.childNodes[1].innerText
-    console.log(itemText)
     
     try {
         const response = await fetch('/addKnowledgeField', {
@@ -41,7 +39,6 @@ async function addToList() {
 
 async function deleteField() {
     const fieldName = this.parentNode.childNodes[5].innerText
-    console.log(fieldName)
     try {
         const response = await fetch('/deleteField', {
             method: 'DELETE',
@@ -78,7 +75,6 @@ techInput.oninput = async function() {
 
 suggestionsBox.onclick = function(event) {
 	const setValue = event.target.innerText
-    console.log(setValue)
 	techInputField.value = setValue
 	this.innerHTML = ""
 	suggestionsBox.style.visibility = 'hidden'
@@ -109,8 +105,7 @@ async function addTech(event) {
 async function saveSession(event) {
     const selectorId = event.target.id
     const tech = event.target.classList[1]
-    const topic = event.target.classList[2]
-    console.log(tech, topic)
+    const topic = event.target.classList[2].split('-').join(' ')
     const selectElement = document.getElementById(`rating-select${selectorId}`)
     const output = selectElement.options[selectElement.selectedIndex].value
     if (!output) {
