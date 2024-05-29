@@ -173,11 +173,29 @@
                     </select>
                     <button class="session-submit-btn <%= tech %> <%= techObj[0].topics[0].topic %>" id="1">Submit</button>
                   </div>
+                  <% if (techObj[0].topics[0].history.length === 0) { %>
                   <p class="opacity-50 mb-0">
                     You have not logged any sessions for this topic.
                   </p>
+                  <% } else { %>
+                    <div class="history-container">
+                    <h5>History</h5> 
+                    <% for (let i = 0; i < techObj[0].topics[0].history.length; i++) { %>
+                      <% let rating = techObj[0].topics[0].history[i].rating %>
+                      <% let circleIconClass = rating.split(' ').join('-') %>
+                      <% let date = techObj[0].topics[0].history[i].date %>
+                      <% let time = techObj[0].topics[0].history[i].time %>
+                      <div class="history-item">
+                        <span><strong>Date:</strong> <%= date %> </span>
+                        <span><strong>Time:</strong> <%= time %> </span>
+                        <span><strong>Rating:</strong>  <%= rating %> <i class="fa-solid fa-circle <%= circleIconClass %>"></i></span>
+                      </div>
+                      <% } %>
+                    </div>
+                  <% } %> 
                 </div>
               </div>
+              
             </div>
             <% for (let i = 1; i < techObj[0].topics.length; i++) { %>
             <div class="ezy__faq10-item">
@@ -207,9 +225,11 @@
                     </select>
                     <button class="session-submit-btn <%= tech %> <%= techObj[0].topics[i].topic %>" id="<%= i + 1 %>">Submit</button>
                   </div>
-                  <p class="opacity-50 mb-0">
-                    You have not logged any sessions for this topic.
-                  </p>
+                  <% if (techObj[0].topics[i].history.length === 0) { %>
+                    <p class="opacity-50 mb-0">
+                      You have not logged any sessions for this topic.
+                    </p>
+                  <% } %>
                 </div>
               </div>
             </div>

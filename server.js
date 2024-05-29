@@ -40,9 +40,9 @@ app.get('/profile/:tech', async (req, res) => {
     const techStack = await db.collection('users').find().toArray()
     const techName = req.params.tech
     const techQuery = techName.split(' ').join('+')
-    console.log(techQuery)
     const userTech = await db.collection('users').find().toArray()
     const result = userTech.filter(field => field.techName === techName)
+    console.log(result[0].topics)
     // const techParam = req.params.tech
     // try {
     //     const userTech = await db.collection('users').find().toArray()
@@ -125,12 +125,18 @@ app.post('/saveSession', async(req, res) => {
     const rating = req.body.rating
     const tech = req.body.tech
     const topic = req.body.topic
-    const today = moment().format('MMMM Do YYYY')
+    const date = moment().format('MMMM Do, YYYY')
+    const time = moment().format('h:mm A')
 
-    db.collection('users').updateOne(
-        { "topics": { $elemMatch: { "topic": topic } } },
-        { $push: { "topics.$.history": { date: today, rating: rating } } }
-      )
+    try {
+        const result = await db.collection('users').updateOne(
+            { "topics": { $elemMatch: { "topic": topic } } },
+            { $push: { "topics.$.history": { date: date, time: time, rating: rating } } }
+        )
+        res.json('Session saved')
+    } catch(err) {
+        console.log(err)
+    }
 })
 
 app.delete('/deleteField', (req, res) => {

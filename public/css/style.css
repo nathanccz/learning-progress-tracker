@@ -1296,6 +1296,7 @@ button.edit-btn {
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 150px;
+    max-height: 450px;
     width: 100%;
     border-radius: 15px;
   }
@@ -1347,6 +1348,39 @@ button.edit-btn {
   .main-topic {
     font-weight: bold;
     font-size: 1.5rem;
+  }
+
+  /* HISTORY */
+
+  .history-container {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+
+  .history-item {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+  }
+
+  .Hard path {
+    fill: red;
+  }
+  .Somewhat-Hard path {
+    fill: orange;
+  }
+
+  .Easy path {
+    fill: greenyellow;
+  }
+
+  .Very-Easy path {
+    fill: green;
+  }
+
+  .Average path {
+    fill: yellow;
   }
 
   /* GLOBAL */
